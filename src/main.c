@@ -35,12 +35,21 @@ int main(int argc, char *argv[]) {
       return 1;
   }
 
+
     // Creating an array and filling it with values from arguments
     int *array = (int*)malloc(n * sizeof(int));
     if (array == NULL) {
         printf("Memory allocation failed.\n");
         return 1;
     }
+
+  // Initializing random number generator
+  srand(time(NULL));
+
+  // Filling the array with random numbers
+  for (int i = 0; i < n; i++) {
+      array[i] = rand() % 1000; // Generating random numbers in the range [0, 999]
+  }
 
     free(array); // Freeing memory allocated for an array
     return 0;
