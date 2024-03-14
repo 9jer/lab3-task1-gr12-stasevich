@@ -51,6 +51,23 @@ int main(int argc, char *argv[]) {
       array[i] = rand() % 1000; // Generating random numbers in the range [0, 999]
   }
 
+    // Output of raw data
+    printf("Source array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+
+    // Array sorting
+    qsort(array, n, sizeof(int), compare);
+
+    // Output sorted array
+    printf("Sorted array in descending order of digit sums:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+
     free(array); // Freeing memory allocated for an array
     return 0;
 }
