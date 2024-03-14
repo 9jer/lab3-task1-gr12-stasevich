@@ -13,6 +13,13 @@ int sum_of_digits(int number) {
     return sum;
 }
 
+// Comparison function for sorting an array in descending order of the sums of digits of numbers
+int compare(const void *a, const void *b) {
+    int sum_a = sum_of_digits(*(int*)a);
+    int sum_b = sum_of_digits(*(int*)b);
+    return sum_b - sum_a;
+}
+
 int main(int argc, char *argv[]) {
     // Checking for the number of arguments
   if (argc != 2) {
